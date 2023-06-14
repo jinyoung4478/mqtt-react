@@ -1,5 +1,5 @@
-import React from 'react'
-import { Card, Button, Form, Input, Row, Col, Select } from 'antd'
+import React from 'react';
+import {Card, Button, Form, Input, Row, Col, Select} from 'antd';
 
 /**
  * this demo uses EMQX Public MQTT Broker (https://www.emqx.com/en/mqtt/public-mqtt5-broker), here are the details:
@@ -9,8 +9,8 @@ import { Card, Button, Form, Input, Row, Col, Select } from 'antd'
  * WebSocket over TLS/SSL port: 8084
  */
 
-const Connection = ({ connect, disconnect, connectBtn }) => {
-  const [form] = Form.useForm()
+const Connection = ({connect, disconnect, connectBtn}) => {
+  const [form] = Form.useForm();
   const initialConnectionOptions = {
     // ws or wss
     protocol: 'ws',
@@ -24,17 +24,17 @@ const Connection = ({ connect, disconnect, connectBtn }) => {
      */
     username: 'emqx_test',
     password: 'emqx_test',
-  }
+  };
 
   const handleProtocolChange = (value) => {
     form.setFieldsValue({
       port: value === 'wss' ? 8084 : 8083,
-    })
-  }
+    });
+  };
 
   const onFinish = (values) => {
-    const { protocol, host, clientId, port, username, password } = values
-    const url = `${protocol}://${host}:${port}/mqtt`
+    const {protocol, host, clientId, port, username, password} = values;
+    const url = `${protocol}://${host}:${port}/ws`;
     const options = {
       clientId,
       username,
@@ -42,17 +42,17 @@ const Connection = ({ connect, disconnect, connectBtn }) => {
       clean: true,
       reconnectPeriod: 1000, // ms
       connectTimeout: 30 * 1000, // ms
-    }
-    connect(url, options)
-  }
+    };
+    connect(url, options);
+  };
 
   const handleConnect = () => {
-    form.submit()
-  }
+    form.submit();
+  };
 
   const handleDisconnect = () => {
-    disconnect()
-  }
+    disconnect();
+  };
 
   const ConnectionForm = (
     <Form
@@ -98,7 +98,7 @@ const Connection = ({ connect, disconnect, connectBtn }) => {
         </Col>
       </Row>
     </Form>
-  )
+  );
 
   return (
     <Card
@@ -114,7 +114,7 @@ const Connection = ({ connect, disconnect, connectBtn }) => {
     >
       {ConnectionForm}
     </Card>
-  )
-}
+  );
+};
 
-export default Connection
+export default Connection;

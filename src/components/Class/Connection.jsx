@@ -40,7 +40,7 @@ class Connection extends React.Component {
 
   onFinish = (values) => {
     const {protocol, host, clientId, port, username, password} = values;
-    const url = `${protocol}://${host}:${port}/mqtt`;
+    const url = `${protocol}://${host}:${port}/ws`;
     const options = {
       clientId,
       username,
