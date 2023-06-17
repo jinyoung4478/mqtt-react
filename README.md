@@ -1,6 +1,6 @@
-# mqtt-client-React
+# mqtt-react
 
-I created this based on the [React Sample by EMQX](https://github.com/emqx/MQTT-Client-Examples) that is using the AntD Design system.
+I created this based on the [React Sample by EMQX](https://github.com/emqx/MQTT-Client-Examples) that uses the AntD Design system. You can use this to test **MQTT** connection and communication in a web environment.
 
 ## Demo
 
