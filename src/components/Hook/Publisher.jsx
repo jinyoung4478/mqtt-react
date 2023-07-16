@@ -1,14 +1,14 @@
-import React, {useContext} from 'react';
-import {Card, Form, Input, Row, Col, Button, Select} from 'antd';
-import {QosOption} from './index';
+import React, { useContext } from "react";
+import { Card, Form, Input, Row, Col, Button, Select } from "antd";
+import { QosOption } from "./index";
 
-const Publisher = ({publish}) => {
+const Publisher = ({ publish }) => {
   const [form] = Form.useForm();
   const qosOptions = useContext(QosOption);
 
   // topic, QoS for publishing message
   const record = {
-    topic: 'testtopic/react',
+    topic: "testtopic/react",
     qos: 0,
   };
 
@@ -19,7 +19,7 @@ const Publisher = ({publish}) => {
   const PublishForm = (
     <Form
       layout="vertical"
-      name={'basic' + Math.random()}
+      name={"basic" + Math.random()}
       form={form}
       initialValues={record}
       onFinish={onFinish}
@@ -40,7 +40,7 @@ const Publisher = ({publish}) => {
             <Input.TextArea />
           </Form.Item>
         </Col>
-        <Col span={8} offset={16} style={{textAlign: 'right'}}>
+        <Col span={8} offset={16} style={{ textAlign: "right" }}>
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Publish

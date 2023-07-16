@@ -1,6 +1,6 @@
-import React from 'react';
-import {Card, Form, Input, Row, Col, Button, Select} from 'antd';
-import {QosOption} from './index';
+import React from "react";
+import { Card, Form, Input, Row, Col, Button, Select } from "antd";
+import { QosOption } from "./index";
 
 class Subscriber extends React.Component {
   constructor(props) {
@@ -8,25 +8,25 @@ class Subscriber extends React.Component {
     this.state = {
       // topic & QoS for MQTT subscribing
       record: {
-        topic: 'testtopic/react',
+        topic: "testtopic/react",
         qos: 0,
       },
     };
   }
 
   onRecordChange = (value) => {
-    const {record} = this.state;
+    const { record } = this.state;
     const changedRecord = Object.assign(record, value);
-    this.setState({record: changedRecord});
+    this.setState({ record: changedRecord });
   };
 
   handleSubscribe = () => {
-    const {topic, qos} = this.state.record;
+    const { topic, qos } = this.state.record;
     this.props.subscribe(topic, qos);
   };
 
   handleUnsub = () => {
-    const {topic, qos} = this.state.record;
+    const { topic, qos } = this.state.record;
     this.props.unsubscribe(topic, qos);
   };
 
@@ -53,7 +53,7 @@ class Subscriber extends React.Component {
               )}
             </QosOption.Consumer>
           </Col>
-          <Col span={8} offset={16} style={{textAlign: 'right'}}>
+          <Col span={8} offset={16} style={{ textAlign: "right" }}>
             <Form.Item>
               <Button
                 type="primary"
@@ -65,7 +65,7 @@ class Subscriber extends React.Component {
               {this.props.showUnsub ? (
                 <Button
                   type="danger"
-                  style={{marginLeft: '10px'}}
+                  style={{ marginLeft: "10px" }}
                   onClick={this.handleUnsub}
                 >
                   Unsubscribe

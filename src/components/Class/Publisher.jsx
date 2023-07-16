@@ -1,6 +1,6 @@
-import React from 'react';
-import {Card, Form, Input, Row, Col, Button, Select} from 'antd';
-import {QosOption} from './index';
+import React from "react";
+import { Card, Form, Input, Row, Col, Button, Select } from "antd";
+import { QosOption } from "./index";
 
 class Publisher extends React.Component {
   constructor(props) {
@@ -8,20 +8,20 @@ class Publisher extends React.Component {
     this.state = {
       // topic, QoS for publishing message
       record: {
-        topic: 'testtopic/react',
+        topic: "testtopic/react",
         qos: 0,
       },
     };
   }
 
   onRecordChange = (value) => {
-    const {record} = this.state;
+    const { record } = this.state;
     const changedRecord = Object.assign(record, value);
-    this.setState({record: changedRecord});
+    this.setState({ record: changedRecord });
   };
 
   handlePublish = () => {
-    const {record} = this.state;
+    const { record } = this.state;
     this.props.publish(record);
   };
 
@@ -53,7 +53,7 @@ class Publisher extends React.Component {
               <Input.TextArea />
             </Form.Item>
           </Col>
-          <Col span={8} offset={16} style={{textAlign: 'right'}}>
+          <Col span={8} offset={16} style={{ textAlign: "right" }}>
             <Form.Item>
               <Button
                 type="primary"
